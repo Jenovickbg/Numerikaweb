@@ -1,0 +1,128 @@
+/* ============================================================
+   Numerika360 SARL — Animations
+   ============================================================ */
+
+/* Reveal on scroll */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
+  will-change: opacity, transform;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+
+.reveal-fade {
+  opacity: 0;
+  transition: opacity 0.8s var(--ease);
+}
+
+.reveal-fade.is-visible {
+  opacity: 1;
+}
+
+.reveal-scale {
+  opacity: 0;
+  transform: scale(0.97);
+  transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
+}
+
+.reveal-scale.is-visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Hero entrance (on load) */
+.hero-animate .hero__label,
+.hero-animate .hero__title,
+.hero-animate .hero__subtitle,
+.hero-animate .btn-group {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: heroIn 0.9s var(--ease) forwards;
+}
+
+.hero-animate .hero__label { animation-delay: 0.1s; }
+.hero-animate .hero__title { animation-delay: 0.25s; }
+.hero-animate .hero__subtitle { animation-delay: 0.4s; }
+.hero-animate .btn-group { animation-delay: 0.55s; }
+
+@keyframes heroIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Page hero */
+.page-hero-animate .page-hero__label,
+.page-hero-animate .page-hero__title,
+.page-hero-animate .page-hero__subtitle {
+  opacity: 0;
+  transform: translateY(16px);
+  animation: heroIn 0.8s var(--ease) forwards;
+}
+
+.page-hero-animate .page-hero__label { animation-delay: 0.05s; }
+.page-hero-animate .page-hero__title { animation-delay: 0.15s; }
+.page-hero-animate .page-hero__subtitle { animation-delay: 0.3s; }
+
+/* Soft pulse for network nodes (CSS fallback accent) */
+@keyframes softPulse {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 1; }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .reveal,
+  .reveal-fade,
+  .reveal-scale {
+    opacity: 1;
+    transform: none;
+  }
+
+  .hero-animate .hero__label,
+  .hero-animate .hero__title,
+  .hero-animate .hero__subtitle,
+  .hero-animate .btn-group,
+  .page-hero-animate .page-hero__label,
+  .page-hero-animate .page-hero__title,
+  .page-hero-animate .page-hero__subtitle {
+    opacity: 1;
+    transform: none;
+    animation: none;
+  }
+
+  .card:hover,
+  .solution-card:hover,
+  .format-card:hover,
+  .service-row:hover,
+  .expertise-panel:hover {
+    transform: none;
+  }
+
+  .expertise-panel:hover .expertise-panel__img {
+    transform: scale(1.02);
+  }
+}

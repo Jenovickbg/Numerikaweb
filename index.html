@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Numerika360 SARL | Site en développement</title>
+  <meta name="description" content="Le site officiel de Numerika360 SARL est actuellement en cours de développement. Connecter. Innover. Transformer.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://numerika360sarl.com/">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:url" content="https://numerika360sarl.com/">
+  <meta property="og:site_name" content="Numerika360 SARL">
+  <meta property="og:title" content="Numerika360 SARL | Site en développement">
+  <meta property="og:description" content="Le site officiel de Numerika360 SARL est actuellement en cours de développement.">
+  <meta property="og:image" content="https://numerika360sarl.com/assets/logo/logo.svg">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Numerika360 SARL | Site en développement">
+  <meta name="twitter:description" content="Le site officiel est actuellement en cours de développement.">
+  <link rel="icon" type="image/svg+xml" href="assets/logo/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #FFFFFF;
+      --text: #0B1220;
+      --muted: #64748B;
+      --line: rgba(15, 23, 42, 0.1);
+      --blue: #2563EB;
+      --cyan: #0891B2;
+      --font: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --ease: cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html, body { height: 100%; }
+
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      overflow: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ---- Atmosphere ---- */
+    .stage {
+      position: relative;
+      min-height: 100vh;
+      isolation: isolate;
+      overflow: hidden;
+      background: #FFFFFF;
+    }
+
+    .stage__aurora {
+      position: absolute;
+      inset: -20%;
+      z-index: 0;
+      background:
+        radial-gradient(ellipse 50% 40% at 12% 18%, rgba(37, 99, 235, 0.1), transparent 60%),
+        radial-gradient(ellipse 45% 35% at 88% 78%, rgba(8, 145, 178, 0.08), transparent 55%),
+        radial-gradient(ellipse 55% 40% at 50% 100%, rgba(241, 245, 249, 0.9), transparent 70%);
+      animation: auroraDrift 18s var(--ease) infinite alternate;
+    }
+
+    .stage__noise {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      opacity: 0.025;
+      pointer-events: none;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    }
+
+    .stage__canvas {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      width: 100%;
+      height: 100%;
+      opacity: 0.45;
+    }
+
+    .stage__orb {
+      position: absolute;
+      z-index: 2;
+      width: min(52vw, 520px);
+      height: min(52vw, 520px);
+      right: -8%;
+      top: 48%;
+      transform: translateY(-50%);
+      border-radius: 50%;
+      border: 1px solid rgba(15, 23, 42, 0.08);
+      pointer-events: none;
+    }
+
+    .stage__orb::before,
+    .stage__orb::after {
+      content: "";
+      position: absolute;
+      inset: 12%;
+      border-radius: 50%;
+      border: 1px solid rgba(8, 145, 178, 0.15);
+    }
+
+    .stage__orb::after {
+      inset: 28%;
+      border-color: rgba(37, 99, 235, 0.14);
+      animation: orbSpin 28s linear infinite;
+      border-top-color: rgba(37, 99, 235, 0.55);
+      border-right-color: transparent;
+    }
+
+    .stage__mark {
+      position: absolute;
+      z-index: 2;
+      right: -6%;
+      bottom: -10%;
+      font-size: clamp(12rem, 32vw, 24rem);
+      font-weight: 700;
+      letter-spacing: -0.08em;
+      line-height: 0.8;
+      color: transparent;
+      background: linear-gradient(165deg, rgba(15, 23, 42, 0.04) 0%, rgba(37, 99, 235, 0.08) 45%, rgba(8, 145, 178, 0.05) 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      user-select: none;
+      pointer-events: none;
+      animation: markFloat 10s var(--ease) infinite alternate;
+    }
+
+    /* ---- Layout ---- */
+    .frame {
+      position: relative;
+      z-index: 5;
+      width: min(100% - 2.5rem, 1120px);
+      margin-inline: auto;
+      min-height: 100vh;
+      min-height: 100dvh;
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      padding-block: clamp(1.5rem, 3.5vh, 2.5rem);
+      gap: 1rem;
+    }
+
+    .top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      opacity: 0;
+      animation: rise 0.9s var(--ease) 0.1s forwards;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      text-decoration: none;
+      color: inherit;
+      font-weight: 600;
+      font-size: 1.05rem;
+      letter-spacing: -0.03em;
+    }
+
+    .brand__360 {
+      color: var(--blue);
+      font-weight: 500;
+    }
+
+    .status {
+      display: inline-flex;
+      align-items: center;
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    /* ---- Hero ---- */
+    .hero {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-self: center;
+      width: 100%;
+      max-width: 36rem;
+      padding: 0;
+      margin: 0;
+    }
+
+    .hero__kicker {
+      font-size: 0.8125rem;
+      color: var(--muted);
+      letter-spacing: 0.04em;
+      margin-bottom: 1.25rem;
+      opacity: 0;
+      animation: rise 0.9s var(--ease) 0.25s forwards;
+    }
+
+    .hero__title {
+      font-size: clamp(2.5rem, 6.5vw, 4.75rem);
+      font-weight: 600;
+      letter-spacing: -0.045em;
+      line-height: 1.02;
+      margin-bottom: 1.35rem;
+      color: var(--text);
+      opacity: 0;
+      animation: rise 1s var(--ease) 0.35s forwards;
+    }
+
+    .hero__title em {
+      font-style: normal;
+      background: linear-gradient(105deg, #0B1220 10%, #2563EB 55%, #0891B2 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero__text {
+      font-size: clamp(1rem, 1.4vw, 1.125rem);
+      color: var(--muted);
+      line-height: 1.65;
+      max-width: 28rem;
+      margin-bottom: 2rem;
+      opacity: 0;
+      animation: rise 1s var(--ease) 0.5s forwards;
+    }
+
+    .hero__actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.85rem 1.35rem;
+      opacity: 0;
+      animation: rise 1s var(--ease) 0.65s forwards;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 1.35rem;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      text-decoration: none;
+      color: #fff;
+      background: linear-gradient(135deg, #2563EB, #1D4ED8);
+      box-shadow: 0 0 0 1px rgba(37, 99, 235, 0.35), 0 12px 32px rgba(37, 99, 235, 0.2);
+      transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease);
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0 0 1px rgba(37, 99, 235, 0.45), 0 16px 40px rgba(37, 99, 235, 0.28);
+    }
+
+    .link-phone {
+      color: #334155;
+      text-decoration: none;
+      font-size: 0.95rem;
+      border-bottom: 1px solid rgba(51, 65, 85, 0.25);
+      padding-bottom: 2px;
+      transition: color 0.2s ease, border-color 0.2s ease;
+    }
+
+    .link-phone:hover {
+      color: var(--blue);
+      border-color: rgba(37, 99, 235, 0.45);
+    }
+
+    /* ---- Bottom bar ---- */
+    .bottom {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem 1.5rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--line);
+      font-size: 0.78rem;
+      color: #94A3B8;
+      opacity: 0;
+      animation: rise 0.9s var(--ease) 0.8s forwards;
+    }
+
+    .bottom__slogan {
+      color: #64748B;
+      letter-spacing: 0.02em;
+    }
+
+    .bottom__meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.65rem 1.1rem;
+    }
+
+    :focus-visible {
+      outline: 2px solid var(--blue);
+      outline-offset: 3px;
+    }
+
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(18px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes auroraDrift {
+      from { transform: translate3d(-2%, -1%, 0) scale(1); }
+      to { transform: translate3d(2%, 2%, 0) scale(1.05); }
+    }
+
+    @keyframes orbSpin {
+      to { transform: rotate(360deg); }
+    }
+
+    @keyframes markFloat {
+      from { transform: translateY(0); opacity: 0.85; }
+      to { transform: translateY(-14px); opacity: 1; }
+    }
+
+    /* Desktop — équilibre contenu / décor */
+    @media (min-width: 960px) {
+      .frame {
+        width: min(100% - 5rem, 1180px);
+        padding-block: 2.25rem;
+      }
+
+      .hero {
+        max-width: 34rem;
+        transform: translateY(-2vh);
+      }
+
+      .stage__orb {
+        right: 4%;
+        width: min(42vw, 480px);
+        height: min(42vw, 480px);
+        opacity: 0.85;
+      }
+
+      .stage__mark {
+        right: 2%;
+        bottom: -6%;
+        font-size: clamp(10rem, 22vw, 20rem);
+        opacity: 0.55;
+        pointer-events: none;
+      }
+    }
+
+    @media (min-width: 1280px) {
+      .frame {
+        width: min(100% - 6rem, 1200px);
+      }
+
+      .hero {
+        max-width: 36rem;
+      }
+
+      .stage__mark {
+        right: 4%;
+        bottom: -4%;
+      }
+    }
+
+    @media (max-width: 768px) {
+      body { overflow: auto; }
+
+      .frame {
+        width: min(100% - 2rem, 1120px);
+      }
+
+      .stage__orb { opacity: 0.35; right: -35%; }
+      .stage__mark { right: -22%; bottom: -4%; opacity: 0.45; font-size: clamp(9rem, 42vw, 14rem); }
+      .hero__title { max-width: 11ch; }
+      .hero__actions { flex-direction: column; align-items: flex-start; }
+      .bottom { flex-direction: column; align-items: flex-start; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .stage__aurora,
+      .stage__orb::after,
+      .stage__mark,
+      .top, .hero__kicker, .hero__title, .hero__text, .hero__actions, .bottom {
+        animation: none !important;
+        opacity: 1;
+        transform: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="stage">
+    <div class="stage__aurora" aria-hidden="true"></div>
+    <div class="stage__noise" aria-hidden="true"></div>
+    <canvas class="stage__canvas" id="field" aria-hidden="true"></canvas>
+    <div class="stage__orb" aria-hidden="true"></div>
+    <div class="stage__mark" aria-hidden="true">360</div>
+
+    <div class="frame">
+      <header class="top">
+        <a class="brand" href="/" aria-label="Numerika360 SARL">
+          <span>Numerika<span class="brand__360">360</span></span>
+        </a>
+        <p class="status">En construction</p>
+      </header>
+
+      <main class="hero">
+        <p class="hero__kicker">Numerika360 SARL · République démocratique du Congo</p>
+        <h1 class="hero__title">Connecter.<br>Innover.<br><em>Transformer.</em></h1>
+        <p class="hero__text">
+          Notre plateforme officielle est en cours de conception.
+          Une expérience premium arrive — en attendant, parlons de votre projet.
+        </p>
+        <div class="hero__actions">
+          <a class="btn" href="mailto:contact@numerika360sarl.com">Nous écrire</a>
+          <a class="link-phone" href="mailto:contact@numerika360sarl.com">contact@numerika360sarl.com</a>
+        </div>
+      </main>
+
+      <footer class="bottom">
+        <p class="bottom__slogan">Connecter. Innover. Transformer.</p>
+        <div class="bottom__meta">
+          <span>© 2026 Numerika360 SARL</span>
+          <span>Tous droits réservés</span>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      var canvas = document.getElementById("field");
+      if (!canvas || reduce) return;
+
+      var ctx = canvas.getContext("2d");
+      if (!ctx) return;
+
+      var nodes = [];
+      var dpr = Math.min(window.devicePixelRatio || 1, 2);
+      var raf;
+
+      function resize() {
+        var w = window.innerWidth;
+        var h = window.innerHeight;
+        canvas.width = w * dpr;
+        canvas.height = h * dpr;
+        canvas.style.width = w + "px";
+        canvas.style.height = h + "px";
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        var count = Math.min(42, Math.floor((w * h) / 28000));
+        nodes = [];
+        for (var i = 0; i < count; i++) {
+          nodes.push({
+            x: Math.random() * w,
+            y: Math.random() * h,
+            vx: (Math.random() - 0.5) * 0.22,
+            vy: (Math.random() - 0.5) * 0.22,
+            r: Math.random() * 1.5 + 0.4
+          });
+        }
+      }
+
+      function draw() {
+        var w = canvas.clientWidth;
+        var h = canvas.clientHeight;
+        ctx.clearRect(0, 0, w, h);
+
+        for (var i = 0; i < nodes.length; i++) {
+          var p = nodes[i];
+          p.x += p.vx;
+          p.y += p.vy;
+          if (p.x < 0 || p.x > w) p.vx *= -1;
+          if (p.y < 0 || p.y > h) p.vy *= -1;
+
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+          ctx.fillStyle = "rgba(100, 116, 139, 0.35)";
+          ctx.fill();
+
+          for (var j = i + 1; j < nodes.length; j++) {
+            var q = nodes[j];
+            var dx = p.x - q.x;
+            var dy = p.y - q.y;
+            var dist = Math.sqrt(dx * dx + dy * dy);
+            if (dist < 130) {
+              ctx.beginPath();
+              ctx.moveTo(p.x, p.y);
+              ctx.lineTo(q.x, q.y);
+              ctx.strokeStyle = "rgba(37, 99, 235, " + (0.12 * (1 - dist / 130)) + ")";
+              ctx.lineWidth = 0.7;
+              ctx.stroke();
+            }
+          }
+        }
+        raf = requestAnimationFrame(draw);
+      }
+
+      resize();
+      draw();
+      var t;
+      window.addEventListener("resize", function () {
+        clearTimeout(t);
+        t = setTimeout(function () {
+          cancelAnimationFrame(raf);
+          resize();
+          draw();
+        }, 120);
+      });
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+  <!-- Abstract mark: nested arcs  replace with official logo when available -->
+  <rect width="32" height="32" rx="8" fill="#0B1F3A"/>
+  <path d="M8 22c4-8 12-8 16 0" stroke="#06B6D4" stroke-width="1.75" stroke-linecap="round"/>
+  <path d="M10 18c3-5 9-5 12 0" stroke="#2563EB" stroke-width="1.75" stroke-linecap="round"/>
+  <circle cx="16" cy="12" r="2.25" fill="#FFFFFF"/>
+</svg>
