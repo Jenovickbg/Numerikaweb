@@ -39,23 +39,6 @@
     grid-template-columns: 1fr;
   }
 
-  .service-detail__item {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
-
-  .mission-block {
-    grid-template-columns: 1fr;
-  }
-
-  .values-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .formats-grid {
-    grid-template-columns: 1fr;
-  }
-
   .contact-layout {
     grid-template-columns: 1fr;
     gap: 2.5rem;
@@ -74,8 +57,7 @@
     --section-y: clamp(3.5rem, 10vw, 5rem);
   }
 
-  .container,
-  .container--wide {
+  .container {
     width: min(100% - 1.75rem, var(--container));
   }
 
@@ -89,20 +71,6 @@
   }
 
   .why-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .values-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .service-row {
-    grid-template-columns: 3rem 1fr auto;
-    gap: 1rem;
-    padding: 1.25rem 0;
-  }
-
-  .service-detail__cols {
     grid-template-columns: 1fr;
   }
 
@@ -169,20 +137,11 @@
     padding: 0.65rem 0.9rem;
     font-size: 0.8125rem;
   }
-
-  .service-row__arrow {
-    display: none;
-  }
-
-  .service-row {
-    grid-template-columns: 2.5rem 1fr;
-  }
 }
 
 /* Very small */
 @media (max-width: 375px) {
-  .container,
-  .container--wide {
+  .container {
     width: min(100% - 1.25rem, var(--container));
   }
 

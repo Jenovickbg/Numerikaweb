@@ -3,10 +3,13 @@ Allow: /
 Disallow: /accueil.html
 Disallow: /accueil
 Disallow: /contact.html
+Disallow: /mentions.html
 Disallow: /about.html
 Disallow: /services.html
 Disallow: /solutions.html
 Disallow: /formation.html
 Disallow: /network.html
+Disallow: /legal.html
+Disallow: /privacy.html
 
 Sitemap: https://numerika360sarl.com/sitemap.xml

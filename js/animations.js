@@ -7,13 +7,13 @@
   var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   if (reduceMotion) {
-    document.querySelectorAll(".reveal, .reveal-fade, .reveal-scale").forEach(function (el) {
+    document.querySelectorAll(".reveal, .reveal-scale").forEach(function (el) {
       el.classList.add("is-visible");
     });
     return;
   }
 
-  var targets = document.querySelectorAll(".reveal, .reveal-fade, .reveal-scale");
+  var targets = document.querySelectorAll(".reveal, .reveal-scale");
 
   if (!("IntersectionObserver" in window) || !targets.length) {
     targets.forEach(function (el) {

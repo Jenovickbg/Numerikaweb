@@ -18,16 +18,6 @@
 .reveal-delay-1 { transition-delay: 0.1s; }
 .reveal-delay-2 { transition-delay: 0.2s; }
 .reveal-delay-3 { transition-delay: 0.3s; }
-.reveal-delay-4 { transition-delay: 0.4s; }
-
-.reveal-fade {
-  opacity: 0;
-  transition: opacity 0.8s var(--ease);
-}
-
-.reveal-fade.is-visible {
-  opacity: 1;
-}
 
 .reveal-scale {
   opacity: 0;
@@ -75,12 +65,6 @@
 .page-hero-animate .page-hero__title { animation-delay: 0.15s; }
 .page-hero-animate .page-hero__subtitle { animation-delay: 0.3s; }
 
-/* Soft pulse for network nodes (CSS fallback accent) */
-@keyframes softPulse {
-  0%, 100% { opacity: 0.4; }
-  50% { opacity: 1; }
-}
-
 /* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
   html {
@@ -96,7 +80,6 @@
   }
 
   .reveal,
-  .reveal-fade,
   .reveal-scale {
     opacity: 1;
     transform: none;
@@ -116,8 +99,6 @@
 
   .card:hover,
   .solution-card:hover,
-  .format-card:hover,
-  .service-row:hover,
   .pole-card:hover,
   .expertise-panel:hover {
     transform: none;
