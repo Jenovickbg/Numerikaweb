@@ -35,24 +35,32 @@ sudo nginx -t && sudo systemctl reload nginx
 
 ```
 ├── index.html          Page publique « site en développement »
-├── accueil.html        Site complet (accès via /accueil)
-├── about.html …        Pages internes
+├── accueil.html        Page vitrine unique (ancres)
+├── contact.html        Formulaire de contact
+├── mentions.html       Mentions légales + confidentialité
+├── about/services/…    Redirections vers les ancres
 ├── css/  js/  assets/
 ├── deploy/
-│   ├── nginx.conf      Config Nginx Ubuntu
-│   └── DEPLOY.md       Guide déploiement VPS + Cloudflare
 ├── robots.txt
 └── sitemap.xml
 ```
+
+## Architecture
+
+Site vitrine **one-page** avec navigation par ancres :
+
+`#offre` · `#solutions` · `#formation` · `#network`
+
+Pages séparées : `contact.html`, `mentions.html`.
 
 ## Accès pendant le développement
 
 | URL | Résultat |
 |-----|----------|
 | `/` | Page « en construction » |
-| `/accueil` | Aperçu du site complet |
+| `/accueil` | Site vitrine complet |
 
-Quand le site sera prêt : remplacer `index.html` par le contenu de `accueil.html`, retirer les `Disallow` / `noindex`.
+Quand le site sera prêt : remplacer `index.html` par le contenu de `accueil.html`.
 
 ## Lancer en local
 

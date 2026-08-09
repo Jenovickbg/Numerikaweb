@@ -12,11 +12,11 @@
   <meta property="og:url" content="https://numerika360sarl.com/accueil">
   <meta property="og:site_name" content="Numerika360 SARL">
   <meta property="og:title" content="Numerika360 SARL | Solutions technologiques, IA, Data &amp; Transformation numérique">
-  <meta property="og:description" content="Numerika360 SARL accompagne les entreprises, institutions et organisations dans leur transformation numérique grâce à l'intelligence artificielle, la data, les infrastructures, la cybersécurité et la formation.">
+  <meta property="og:description" content="Numerika360 SARL accompagne les entreprises, institutions et organisations dans leur transformation numérique.">
   <meta property="og:image" content="https://numerika360sarl.com/assets/logo/logo.svg">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Numerika360 SARL | Solutions technologiques">
-  <meta name="twitter:description" content="Connecter. Innover. Transformer. Solutions technologiques pour entreprises et institutions.">
+  <meta name="twitter:description" content="Connecter. Innover. Transformer.">
   <link rel="icon" type="image/svg+xml" href="assets/logo/favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -30,18 +30,15 @@
 
   <header class="header">
     <div class="container nav">
-      <a href="accueil.html" class="logo" aria-label="Numerika360 — Accueil">
-        <img class="logo__mark" src="assets/logo/logo.svg" width="28" height="28" alt="">
+      <a href="#top" class="logo" aria-label="Numerika360 — Accueil">
         <span class="logo__text">Numerika<span>360</span></span>
       </a>
 
       <nav class="nav__links" aria-label="Navigation principale">
-        <a class="nav__link is-active" href="accueil.html">Accueil</a>
-        <a class="nav__link" href="about.html">À propos</a>
-        <a class="nav__link" href="services.html">Services</a>
-        <a class="nav__link" href="solutions.html">Solutions</a>
-        <a class="nav__link" href="formation.html">Formation</a>
-        <a class="nav__link" href="network.html">Network</a>
+        <a class="nav__link" href="#offre">Offre</a>
+        <a class="nav__link" href="#solutions">Solutions</a>
+        <a class="nav__link" href="#formation">Formation</a>
+        <a class="nav__link" href="#network">Network</a>
         <a class="nav__link" href="contact.html">Contact</a>
       </nav>
 
@@ -51,24 +48,22 @@
         <span class="nav__toggle-bar"></span>
       </button>
     </div>
-
-    <div class="nav__mobile" id="mobile-menu" role="dialog" aria-modal="true" aria-label="Menu de navigation">
-      <nav class="nav__mobile-links" aria-label="Navigation mobile">
-        <a class="nav__mobile-link is-active" href="accueil.html">Accueil</a>
-        <a class="nav__mobile-link" href="about.html">À propos</a>
-        <a class="nav__mobile-link" href="services.html">Services</a>
-        <a class="nav__mobile-link" href="solutions.html">Solutions</a>
-        <a class="nav__mobile-link" href="formation.html">Formation</a>
-        <a class="nav__mobile-link" href="network.html">Network</a>
-        <a class="nav__mobile-link" href="contact.html">Contact</a>
-      </nav>
-      <a class="btn btn--primary nav__mobile-cta" href="contact.html">Nous contacter</a>
-    </div>
   </header>
+
+  <div class="nav__mobile" id="mobile-menu" role="dialog" aria-modal="true" aria-label="Menu de navigation">
+    <nav class="nav__mobile-links" aria-label="Navigation mobile">
+      <a class="nav__mobile-link" href="#offre">Offre</a>
+      <a class="nav__mobile-link" href="#solutions">Solutions</a>
+      <a class="nav__mobile-link" href="#formation">Formation</a>
+      <a class="nav__mobile-link" href="#network">Network</a>
+      <a class="nav__mobile-link" href="contact.html">Contact</a>
+    </nav>
+    <a class="btn btn--primary nav__mobile-cta" href="contact.html">Nous contacter</a>
+  </div>
 
   <main id="main">
     <!-- HERO -->
-    <section class="hero hero-animate" aria-labelledby="hero-title">
+    <section class="hero hero-animate" id="top" aria-labelledby="hero-title">
       <div class="hero__bg" aria-hidden="true">
         <div class="hero__glow"></div>
         <div class="hero__grid"></div>
@@ -80,189 +75,168 @@
           <h1 id="hero-title" class="hero__title">Connecter. Innover.<br>Transformer.</h1>
           <p class="hero__subtitle">Nous concevons des solutions technologiques intelligentes pour accompagner les entreprises, institutions et organisations dans leur transformation numérique.</p>
           <div class="btn-group">
-            <a class="btn btn--primary btn--lg" href="services.html">Découvrir nos services</a>
+            <a class="btn btn--primary btn--lg" href="#offre">Découvrir notre offre</a>
             <a class="btn btn--secondary btn--lg" href="contact.html">Parler à Numerika360</a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- EXPERTISE -->
-    <section class="section section--alt" aria-labelledby="expertise-title">
+    <!-- A PROPOS (compact) -->
+    <section class="section" id="a-propos" aria-labelledby="about-title">
+      <div class="container">
+        <div class="split">
+          <div class="reveal">
+            <p class="section__label">À propos</p>
+            <h2 id="about-title" class="section__title">Une entreprise technologique au service de la transformation.</h2>
+            <p class="lead mt-2">Numerika360 SARL est une entreprise technologique congolaise. Nous accompagnons organisations privées et publiques avec des solutions adaptées à leurs enjeux réels.</p>
+          </div>
+          <div class="reveal reveal-delay-2">
+            <div class="mission-card">
+              <p class="mission-card__label">Notre mission</p>
+              <p class="mission-card__text">Accompagner les entreprises, institutions et organisations dans leur transformation numérique grâce à des solutions technologiques intelligentes, accessibles et adaptées à leurs besoins.</p>
+            </div>
+          </div>
+        </div>
+        <div class="why-grid mt-4">
+          <div class="why-item reveal">
+            <h3 class="why-item__title">Expertise</h3>
+            <p class="why-item__text">Des technologies modernes, adaptées aux enjeux métier.</p>
+          </div>
+          <div class="why-item reveal reveal-delay-1">
+            <h3 class="why-item__title">Sur mesure</h3>
+            <p class="why-item__text">Chaque solution part des besoins réels du client.</p>
+          </div>
+          <div class="why-item reveal reveal-delay-2">
+            <h3 class="why-item__title">Accompagnement</h3>
+            <p class="why-item__text">De la conception au déploiement, avec les équipes.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- OFFRE -->
+    <section class="section section--alt" id="offre" aria-labelledby="offre-title">
       <div class="container">
         <div class="section__header reveal">
-          <p class="section__label">Notre expertise</p>
-          <h2 id="expertise-title" class="section__title">La technologie au service de votre transformation.</h2>
+          <p class="section__label">Notre offre</p>
+          <h2 id="offre-title" class="section__title">Quatre pôles. Une offre claire.</h2>
+          <p class="section__subtitle">De la donnée à l’infrastructure, nos expertises sont regroupées pour répondre aux besoins réels des organisations.</p>
         </div>
-        <div class="expertise-panels">
-          <article class="expertise-panel reveal reveal-delay-1">
+
+        <div class="expertise-panels" style="margin-bottom: 2rem;">
+          <article class="expertise-panel reveal">
             <img class="expertise-panel__img" src="assets/images/expertise/intelligence-data.jpg" alt="" loading="lazy" width="1400" height="788">
             <div class="expertise-panel__overlay" aria-hidden="true"></div>
             <div class="expertise-panel__content">
               <h3 class="expertise-panel__title">Intelligence &amp; Data</h3>
-              <p class="expertise-panel__tags">IA · ML · Data Science · BI</p>
+              <p class="expertise-panel__tags">IA · Data Science · BI</p>
             </div>
           </article>
-          <article class="expertise-panel reveal reveal-delay-2">
+          <article class="expertise-panel reveal reveal-delay-1">
             <img class="expertise-panel__img" src="assets/images/expertise/transformation.jpg" alt="" loading="lazy" width="1400" height="788">
             <div class="expertise-panel__overlay" aria-hidden="true"></div>
             <div class="expertise-panel__content">
-              <h3 class="expertise-panel__title">Transformation numérique</h3>
-              <p class="expertise-panel__tags">Digitalisation · Automatisation · Solutions · Systèmes</p>
+              <h3 class="expertise-panel__title">Digital &amp; Software</h3>
+              <p class="expertise-panel__tags">Digitalisation · Développement · Sur mesure</p>
             </div>
           </article>
-          <article class="expertise-panel reveal reveal-delay-3">
+          <article class="expertise-panel reveal reveal-delay-2">
             <img class="expertise-panel__img" src="assets/images/expertise/infrastructure.jpg" alt="" loading="lazy" width="1400" height="788">
             <div class="expertise-panel__overlay" aria-hidden="true"></div>
             <div class="expertise-panel__content">
               <h3 class="expertise-panel__title">Infrastructure &amp; Sécurité</h3>
-              <p class="expertise-panel__tags">Réseaux · Cloud · Serveurs · Cybersécurité</p>
+              <p class="expertise-panel__tags">Réseaux · Cloud · Cybersécurité</p>
             </div>
           </article>
-          <article class="expertise-panel reveal reveal-delay-4">
+          <article class="expertise-panel reveal reveal-delay-3">
             <img class="expertise-panel__img" src="assets/images/expertise/formation-network.jpg" alt="" loading="lazy" width="1400" height="788">
             <div class="expertise-panel__overlay" aria-hidden="true"></div>
             <div class="expertise-panel__content">
-              <h3 class="expertise-panel__title">Formation &amp; Network</h3>
-              <p class="expertise-panel__tags">Formation · Ateliers · Communauté · Événements</p>
+              <h3 class="expertise-panel__title">Formation &amp; Accompagnement</h3>
+              <p class="expertise-panel__tags">Formation · Conseil</p>
             </div>
           </article>
         </div>
-      </div>
-    </section>
 
-    <!-- POURQUOI -->
-    <section class="section" aria-labelledby="why-title">
-      <div class="container">
-        <div class="section__header reveal">
-          <p class="section__label">Pourquoi Numerika360</p>
-          <h2 id="why-title" class="section__title">Une technologie pensée pour des besoins réels.</h2>
-        </div>
-        <div class="why-grid">
-          <div class="why-item reveal">
-            <h3 class="why-item__title">Expertise technologique</h3>
-            <p class="why-item__text">Des solutions basées sur des technologies modernes, adaptées aux enjeux métier.</p>
-          </div>
-          <div class="why-item reveal reveal-delay-1">
-            <h3 class="why-item__title">Approche sur mesure</h3>
-            <p class="why-item__text">Chaque solution est adaptée aux besoins réels du client, sans approche générique.</p>
-          </div>
-          <div class="why-item reveal reveal-delay-2">
-            <h3 class="why-item__title">Innovation</h3>
-            <p class="why-item__text">Nous exploitons l’IA, la data et les nouvelles technologies pour créer de nouvelles possibilités.</p>
-          </div>
-          <div class="why-item reveal">
-            <h3 class="why-item__title">Accompagnement</h3>
-            <p class="why-item__text">Nous accompagnons nos clients de la conception au déploiement.</p>
-          </div>
-          <div class="why-item reveal reveal-delay-1">
-            <h3 class="why-item__title">Vision locale, ambition internationale</h3>
-            <p class="why-item__text">Une entreprise basée en RDC avec une vision tournée vers l’Afrique et le monde.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SERVICES -->
-    <section class="section section--alt" aria-labelledby="services-title">
-      <div class="container">
-        <div class="section__header reveal">
-          <p class="section__label">Nos services</p>
-          <h2 id="services-title" class="section__title">Des offres conçues pour transformer vos opérations.</h2>
-          <p class="section__subtitle">De l’intelligence artificielle aux infrastructures sécurisées, nous couvrons l’ensemble du cycle technologique.</p>
-        </div>
-        <div class="services-list">
-          <a class="service-row reveal" href="services.html#ia">
-            <span class="service-row__num">01</span>
-            <span class="service-row__title">Intelligence Artificielle &amp; Machine Learning</span>
-            <span class="service-row__arrow" aria-hidden="true">→</span>
-          </a>
-          <a class="service-row reveal" href="services.html#data">
-            <span class="service-row__num">02</span>
-            <span class="service-row__title">Data Science &amp; Analyse de données</span>
-            <span class="service-row__arrow" aria-hidden="true">→</span>
-          </a>
-          <a class="service-row reveal" href="services.html#bi">
-            <span class="service-row__num">03</span>
-            <span class="service-row__title">Business Intelligence</span>
-            <span class="service-row__arrow" aria-hidden="true">→</span>
-          </a>
-          <a class="service-row reveal" href="services.html#digital">
-            <span class="service-row__num">04</span>
-            <span class="service-row__title">Digitalisation &amp; Automatisation</span>
-            <span class="service-row__arrow" aria-hidden="true">→</span>
-          </a>
-          <a class="service-row reveal" href="services.html#dev">
-            <span class="service-row__num">05</span>
-            <span class="service-row__title">Développement Web &amp; Applications</span>
-            <span class="service-row__arrow" aria-hidden="true">→</span>
-          </a>
-          <a class="service-row reveal" href="services.html#reseaux">
-            <span class="service-row__num">06</span>
-            <span class="service-row__title">Réseaux &amp; Infrastructures</span>
-            <span class="service-row__arrow" aria-hidden="true">→</span>
-          </a>
-          <a class="service-row reveal" href="services.html#cloud">
-            <span class="service-row__num">07</span>
-            <span class="service-row__title">Cloud &amp; Serveurs</span>
-            <span class="service-row__arrow" aria-hidden="true">→</span>
-          </a>
-          <a class="service-row reveal" href="services.html#cyber">
-            <span class="service-row__num">08</span>
-            <span class="service-row__title">Cybersécurité</span>
-            <span class="service-row__arrow" aria-hidden="true">→</span>
-          </a>
-          <a class="service-row reveal" href="services.html#formation">
-            <span class="service-row__num">09</span>
-            <span class="service-row__title">Formation professionnelle</span>
-            <span class="service-row__arrow" aria-hidden="true">→</span>
-          </a>
-          <a class="service-row reveal" href="services.html#surmesure">
-            <span class="service-row__num">10</span>
-            <span class="service-row__title">Solutions technologiques sur mesure</span>
-            <span class="service-row__arrow" aria-hidden="true">→</span>
-          </a>
-        </div>
-        <div class="mt-4 reveal">
-          <a class="btn btn--secondary" href="services.html">Voir tous les services</a>
+        <div class="poles-grid">
+          <article class="pole-card reveal" id="offre-intelligence">
+            <span class="pole-card__num">01</span>
+            <h3 class="pole-card__title">Intelligence &amp; Data</h3>
+            <p class="pole-card__text">Transformer les données en intelligence et en décisions.</p>
+            <ul class="pole-card__list">
+              <li>Intelligence Artificielle &amp; Machine Learning</li>
+              <li>Data Science &amp; Analyse de données</li>
+              <li>Business Intelligence</li>
+            </ul>
+          </article>
+          <article class="pole-card reveal reveal-delay-1" id="offre-digital">
+            <span class="pole-card__num">02</span>
+            <h3 class="pole-card__title">Digital &amp; Software</h3>
+            <p class="pole-card__text">Concevoir des solutions digitales adaptées aux besoins réels.</p>
+            <ul class="pole-card__list">
+              <li>Digitalisation &amp; Automatisation</li>
+              <li>Développement Web &amp; Applications</li>
+              <li>Solutions technologiques sur mesure</li>
+            </ul>
+          </article>
+          <article class="pole-card reveal reveal-delay-2" id="offre-infra">
+            <span class="pole-card__num">03</span>
+            <h3 class="pole-card__title">Infrastructure, Cloud &amp; Cybersécurité</h3>
+            <p class="pole-card__text">Construire et sécuriser des infrastructures fiables.</p>
+            <ul class="pole-card__list">
+              <li>Réseaux &amp; Infrastructures</li>
+              <li>Cloud &amp; Serveurs</li>
+              <li>Cybersécurité</li>
+            </ul>
+          </article>
+          <article class="pole-card reveal reveal-delay-3" id="offre-formation">
+            <span class="pole-card__num">04</span>
+            <h3 class="pole-card__title">Formation &amp; Accompagnement</h3>
+            <p class="pole-card__text">Développer les compétences et accompagner la transformation.</p>
+            <ul class="pole-card__list">
+              <li>Formation professionnelle</li>
+              <li>Accompagnement &amp; Conseil technologique</li>
+            </ul>
+          </article>
         </div>
       </div>
     </section>
 
     <!-- SOLUTIONS -->
-    <section class="section" aria-labelledby="solutions-title">
+    <section class="section" id="solutions" aria-labelledby="solutions-title">
       <div class="container">
         <div class="section__header reveal">
-          <p class="section__label">Nos solutions</p>
+          <p class="section__label">Solutions</p>
           <h2 id="solutions-title" class="section__title">Des produits conçus pour des besoins concrets.</h2>
         </div>
         <div class="solutions-grid">
-          <article class="solution-card solution-card--featured reveal">
+          <article class="solution-card solution-card--featured reveal" id="studynet360">
             <span class="solution-card__badge">EdTech</span>
             <h3 class="solution-card__title">Studynet360</h3>
             <p class="solution-card__text">Une plateforme numérique destinée aux établissements scolaires et universitaires pour simplifier la gestion académique et connecter étudiants, enseignants et administration.</p>
-            <a class="btn btn--primary" href="solutions.html#studynet360">Découvrir Studynet360</a>
+            <a class="btn btn--primary" href="contact.html?sujet=studynet360">Demander une démo</a>
           </article>
-          <article class="solution-card reveal reveal-delay-2">
+          <article class="solution-card reveal reveal-delay-2" id="policemap">
             <span class="solution-card__badge solution-card__badge--dev">En développement</span>
             <h3 class="solution-card__title">PoliceMap RDC</h3>
-            <p class="solution-card__text">Une solution numérique de cartographie et de gestion destinée à améliorer la visualisation et l’organisation des infrastructures de sécurité.</p>
-            <a class="btn btn--secondary" href="solutions.html#policemap">En savoir plus</a>
+            <p class="solution-card__text">Une solution numérique de cartographie et de gestion destinée à améliorer la visualisation et l’organisation des infrastructures de sécurité. Non commercialisée à ce stade.</p>
+            <a class="btn btn--secondary" href="contact.html?sujet=policemap">En savoir plus</a>
           </article>
         </div>
       </div>
     </section>
 
     <!-- FORMATION -->
-    <section class="section section--alt" aria-labelledby="formation-title">
+    <section class="section section--alt" id="formation" aria-labelledby="formation-title">
       <div class="container">
         <div class="split">
           <div class="reveal">
             <p class="section__label">Formation</p>
             <h2 id="formation-title" class="section__title">Développez les compétences de demain.</h2>
-            <p class="lead mt-2">Numerika360 propose des formations pratiques dans les domaines technologiques les plus demandés.</p>
+            <p class="lead mt-2">Formations pratiques pour particuliers et entreprises : formats individuels, sessions entreprises et ateliers ciblés.</p>
             <div class="btn-group mt-4">
-              <a class="btn btn--primary" href="formation.html">Découvrir nos formations</a>
+              <a class="btn btn--primary" href="contact.html?sujet=formation">Demander une formation</a>
             </div>
           </div>
           <div class="reveal reveal-delay-2">
@@ -284,7 +258,7 @@
     </section>
 
     <!-- NETWORK -->
-    <section class="section" aria-labelledby="network-title">
+    <section class="section" id="network" aria-labelledby="network-title">
       <div class="container">
         <div class="section__header section__header--center reveal">
           <p class="section__label">Écosystème</p>
@@ -297,30 +271,29 @@
         <div class="network-grid">
           <article class="card reveal">
             <h3 class="card__title">Communauté</h3>
-            <p class="card__text">Créer une communauté technologique réunissant étudiants, développeurs, ingénieurs, data scientists, entrepreneurs et passionnés de technologie.</p>
+            <p class="card__text">Étudiants, développeurs, ingénieurs, data scientists, entrepreneurs et passionnés de technologie.</p>
           </article>
           <article class="card reveal reveal-delay-1">
             <h3 class="card__title">Réseau professionnel</h3>
-            <p class="card__text">Mettre en relation les talents et les entreprises pour accélérer les opportunités et les collaborations.</p>
+            <p class="card__text">Mise en relation des talents et des entreprises pour accélérer les collaborations.</p>
           </article>
           <article class="card reveal reveal-delay-2">
             <h3 class="card__title">Événements</h3>
-            <p class="card__text">Conférences, ateliers, hackathons, rencontres technologiques et événements professionnels.</p>
+            <p class="card__text">Conférences, ateliers, hackathons et rencontres technologiques.</p>
           </article>
         </div>
         <div class="mt-4" style="text-align:center">
-          <a class="btn btn--primary reveal" href="network.html">Rejoindre le Network</a>
+          <a class="btn btn--primary reveal" href="contact.html?sujet=network">Rejoindre le Network</a>
         </div>
       </div>
     </section>
 
     <!-- SECTEURS -->
-    <section class="section section--alt" aria-labelledby="sectors-title">
+    <section class="section section--alt" id="secteurs" aria-labelledby="sectors-title">
       <div class="container">
         <div class="section__header reveal">
           <p class="section__label">Secteurs que nous accompagnons</p>
           <h2 id="sectors-title" class="section__title">Des solutions pour chaque secteur.</h2>
-          <p class="section__subtitle">Nous concevons des approches adaptées aux réalités et contraintes de chaque type d’organisation.</p>
         </div>
         <div class="sectors reveal" role="list">
           <span class="sector" role="listitem">Entreprise</span>
@@ -342,9 +315,13 @@
       <div class="container">
         <div class="cta-final__content reveal">
           <h2 id="cta-title" class="cta-final__title">Construisons votre prochaine solution technologique.</h2>
-          <p class="cta-final__text">Un projet, un besoin de digitalisation ou une idée ? Échangeons avec Numerika360.</p>
+          <p class="cta-final__text">Un projet, un besoin de digitalisation ou une idée ? Échangeons.</p>
           <a class="btn btn--primary btn--lg" href="contact.html">Nous contacter</a>
-          <p class="cta-final__phone">Téléphone : <a href="tel:+243853670299">+243 853 670 299</a></p>
+          <p class="cta-final__phone">
+            <a href="mailto:contact@numerika360sarl.com">contact@numerika360sarl.com</a>
+            ·
+            <a href="tel:+243853670299">+243 853 670 299</a>
+          </p>
         </div>
       </div>
     </section>
@@ -354,47 +331,42 @@
     <div class="container">
       <div class="footer__grid">
         <div>
-          <a href="accueil.html" class="logo" aria-label="Numerika360">
-            <img class="logo__mark" src="assets/logo/logo.svg" width="28" height="28" alt="">
+          <a href="#top" class="logo" aria-label="Numerika360">
             <span class="logo__text">Numerika<span>360</span> SARL</span>
           </a>
           <p class="footer__slogan">Connecter. Innover. Transformer.</p>
-          <p class="footer__brand-text">Entreprise technologique basée en République démocratique du Congo, engagée dans l’innovation et la transformation numérique.</p>
-          <div class="footer__social" aria-label="Réseaux sociaux">
-            <span title="Facebook — bientôt disponible" aria-label="Facebook bientôt disponible">Fb</span>
-            <span title="Instagram — bientôt disponible" aria-label="Instagram bientôt disponible">Ig</span>
-            <span title="LinkedIn — bientôt disponible" aria-label="LinkedIn bientôt disponible">In</span>
-          </div>
+          <p class="footer__brand-text">Entreprise technologique basée en République démocratique du Congo.</p>
         </div>
         <div>
-          <h3 class="footer__col-title">Entreprise</h3>
+          <h3 class="footer__col-title">Navigation</h3>
           <ul class="footer__links">
-            <li><a href="about.html">À propos</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="solutions.html">Solutions</a></li>
-          </ul>
-        </div>
-        <div>
-          <h3 class="footer__col-title">Ressources</h3>
-          <ul class="footer__links">
-            <li><a href="formation.html">Formation</a></li>
-            <li><a href="network.html">Network</a></li>
+            <li><a href="#offre">Offre</a></li>
+            <li><a href="#solutions">Solutions</a></li>
+            <li><a href="#formation">Formation</a></li>
+            <li><a href="#network">Network</a></li>
           </ul>
         </div>
         <div>
           <h3 class="footer__col-title">Contact</h3>
           <ul class="footer__links">
+            <li><a href="mailto:contact@numerika360sarl.com">contact@numerika360sarl.com</a></li>
             <li><a href="tel:+243853670299">+243 853 670 299</a></li>
-            <li>RDC</li>
-            <li><a href="contact.html">Formulaire de contact</a></li>
+            <li><a href="contact.html">Formulaire</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="footer__col-title">Légal</h3>
+          <ul class="footer__links">
+            <li><a href="mentions.html">Mentions légales</a></li>
+            <li><a href="mentions.html#confidentialite">Confidentialité</a></li>
           </ul>
         </div>
       </div>
       <div class="footer__bottom">
         <p>© <span data-year>2026</span> Numerika360 SARL. Tous droits réservés.</p>
         <div class="footer__legal">
-          <a href="legal.html">Mentions légales</a>
-          <a href="privacy.html">Politique de confidentialité</a>
+          <a href="mentions.html">Mentions légales</a>
+          <a href="mentions.html#confidentialite">Politique de confidentialité</a>
         </div>
       </div>
     </div>

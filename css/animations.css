@@ -118,6 +118,7 @@
   .solution-card:hover,
   .format-card:hover,
   .service-row:hover,
+  .pole-card:hover,
   .expertise-panel:hover {
     transform: none;
   }

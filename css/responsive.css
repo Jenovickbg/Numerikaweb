@@ -5,7 +5,8 @@
 
 /* Large desktops — fine tuning */
 @media (max-width: 1280px) {
-  .expertise-panels {
+  .expertise-panels,
+  .poles-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
@@ -78,7 +79,8 @@
     width: min(100% - 1.75rem, var(--container));
   }
 
-  .expertise-panels {
+  .expertise-panels,
+  .poles-grid {
     grid-template-columns: 1fr;
   }
 
