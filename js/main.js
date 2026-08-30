@@ -76,7 +76,7 @@
             ctx.beginPath();
             ctx.moveTo(p.x, p.y);
             ctx.lineTo(q.x, q.y);
-            ctx.strokeStyle = "rgba(37, 99, 235, " + (0.14 * (1 - dist / 120)) + ")";
+            ctx.strokeStyle = "rgba(0, 81, 186, " + (0.14 * (1 - dist / 120)) + ")";
             ctx.lineWidth = 0.6;
             ctx.stroke();
           }
@@ -159,7 +159,7 @@
 
         ctx.beginPath();
         ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2);
-        ctx.fillStyle = i % 5 === 0 ? "rgba(8, 145, 178, 0.55)" : "rgba(37, 99, 235, 0.45)";
+        ctx.fillStyle = i % 5 === 0 ? "rgba(0, 188, 226, 0.55)" : "rgba(0, 81, 186, 0.45)";
         ctx.fill();
 
         for (var j = i + 1; j < nodes.length; j++) {
