@@ -3,498 +3,444 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Numerika360 SARL | Bientôt</title>
-  <meta name="description" content="Numerika360 SARL prépare son site officiel. Connecter. Innover. Transformer.">
+  <title>Numerika360 SARL | Solutions technologiques, IA, Data &amp; Transformation numérique</title>
+  <meta name="description" content="Numerika360 SARL accompagne les entreprises, institutions et organisations dans leur transformation numérique grâce à l'intelligence artificielle, la data, les infrastructures, la cybersécurité et la formation.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://numerika360sarl.com/">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="fr_FR">
   <meta property="og:url" content="https://numerika360sarl.com/">
   <meta property="og:site_name" content="Numerika360 SARL">
-  <meta property="og:title" content="Numerika360 SARL | Bientôt">
-  <meta property="og:description" content="Quelque chose se prépare. Numerika360 SARL — Connecter. Innover. Transformer.">
+  <meta property="og:title" content="Numerika360 SARL | Solutions technologiques, IA, Data &amp; Transformation numérique">
+  <meta property="og:description" content="Numerika360 SARL accompagne les entreprises, institutions et organisations dans leur transformation numérique.">
   <meta property="og:image" content="https://numerika360sarl.com/assets/logo/logo.png">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Numerika360 SARL | Bientôt">
-  <meta name="twitter:description" content="Notre plateforme officielle arrive bientôt.">
+  <meta name="twitter:title" content="Numerika360 SARL | Solutions technologiques">
+  <meta name="twitter:description" content="Connecter. Innover. Transformer.">
   <meta name="twitter:image" content="https://numerika360sarl.com/assets/logo/logo.png">
   <link rel="icon" type="image/png" href="assets/logo/favicon.png">
   <link rel="apple-touch-icon" href="assets/logo/favicon.png">
   <link rel="stylesheet" href="css/fonts.css">
-  <style>
-    :root {
-      --bg: #f4f8fc;
-      --text: #001a4d;
-      --muted: #3d5a80;
-      --line: rgba(0, 43, 127, 0.1);
-      --blue-cobalt: #002b7f;
-      --blue-royal: #0051ba;
-      --blue-cyan: #00bce2;
-      --font: "Creato Display", system-ui, sans-serif;
-      --font-display: "Technology", var(--font);
-      --ease: cubic-bezier(0.22, 1, 0.36, 1);
-    }
-
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    html, body { height: 100%; }
-
-    body {
-      font-family: var(--font);
-      background: var(--bg);
-      color: var(--text);
-      min-height: 100vh;
-      overflow-x: hidden;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    .stage {
-      position: relative;
-      min-height: 100vh;
-      min-height: 100dvh;
-      isolation: isolate;
-      overflow: hidden;
-      background:
-        radial-gradient(ellipse 70% 55% at 50% -10%, rgba(0, 81, 186, 0.12), transparent 55%),
-        radial-gradient(ellipse 50% 40% at 100% 80%, rgba(0, 188, 226, 0.1), transparent 50%),
-        #f4f8fc;
-    }
-
-    .stage__grid {
-      position: absolute;
-      inset: 0;
-      z-index: 0;
-      background-image:
-        linear-gradient(rgba(15, 23, 42, 0.04) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(15, 23, 42, 0.04) 1px, transparent 1px);
-      background-size: 72px 72px;
-      mask-image: radial-gradient(ellipse 75% 65% at 50% 40%, black 10%, transparent 72%);
-      -webkit-mask-image: radial-gradient(ellipse 75% 65% at 50% 40%, black 10%, transparent 72%);
-      pointer-events: none;
-    }
-
-    .stage__canvas {
-      position: absolute;
-      inset: 0;
-      z-index: 1;
-      width: 100%;
-      height: 100%;
-      opacity: 0.5;
-      pointer-events: none;
-    }
-
-    .stage__ring {
-      position: absolute;
-      z-index: 1;
-      width: min(58vw, 560px);
-      height: min(58vw, 560px);
-      right: -12%;
-      top: 42%;
-      transform: translateY(-50%);
-      border-radius: 50%;
-      border: 1px solid rgba(15, 23, 42, 0.07);
-      pointer-events: none;
-    }
-
-    .stage__ring::before,
-    .stage__ring::after {
-      content: "";
-      position: absolute;
-      border-radius: 50%;
-      border: 1px solid rgba(0, 81, 186, 0.12);
-    }
-
-    .stage__ring::before { inset: 14%; }
-    .stage__ring::after {
-      inset: 30%;
-      border-color: transparent;
-      border-top-color: rgba(0, 81, 186, 0.45);
-      border-right-color: rgba(0, 188, 226, 0.2);
-      animation: spin 22s linear infinite;
-    }
-
-    .stage__watermark {
-      position: absolute;
-      z-index: 1;
-      right: -2%;
-      bottom: -8%;
-      font-size: clamp(11rem, 28vw, 22rem);
-      font-weight: 700;
-      letter-spacing: -0.08em;
-      line-height: 0.78;
-      color: transparent;
-      background: linear-gradient(160deg, rgba(0, 43, 127, 0.045), rgba(0, 81, 186, 0.08) 50%, rgba(0, 188, 226, 0.04));
-      -webkit-background-clip: text;
-      background-clip: text;
-      user-select: none;
-      pointer-events: none;
-      animation: floatY 12s var(--ease) infinite alternate;
-    }
-
-    .frame {
-      position: relative;
-      z-index: 5;
-      width: min(100% - 2.5rem, 1080px);
-      margin-inline: auto;
-      min-height: 100vh;
-      min-height: 100dvh;
-      display: grid;
-      grid-template-rows: auto 1fr auto;
-      padding-block: clamp(1.5rem, 3.5vh, 2.5rem);
-      gap: 1.25rem;
-    }
-
-    .top {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
-      opacity: 0;
-      animation: rise 0.85s var(--ease) 0.08s forwards;
-    }
-
-    .brand {
-      display: inline-flex;
-      align-items: center;
-      text-decoration: none;
-      color: inherit;
-    }
-
-    .brand__img {
-      display: block;
-      height: 36px;
-      width: auto;
-      max-width: min(200px, 52vw);
-    }
-
-    .pill {
-      display: inline-flex;
-      align-items: center;
-      padding: 0.4rem 0.85rem;
-      border-radius: 999px;
-      border: 1px solid rgba(0, 81, 186, 0.18);
-      background: rgba(0, 81, 186, 0.06);
-      font-size: 0.6875rem;
-      font-weight: 600;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--blue-royal);
-    }
-
-    .hero {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      max-width: 40rem;
-      padding-block: 1rem;
-    }
-
-    .hero__eyebrow {
-      font-size: 0.8125rem;
-      color: var(--muted);
-      letter-spacing: 0.02em;
-      margin-bottom: 1.35rem;
-      opacity: 0;
-      animation: rise 0.9s var(--ease) 0.2s forwards;
-    }
-
-    .hero__title {
-      font-family: var(--font-display);
-      font-size: clamp(2.4rem, 7vw, 4.25rem);
-      font-weight: 400;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-      line-height: 1.05;
-      margin-bottom: 1rem;
-      opacity: 0;
-      animation: rise 1s var(--ease) 0.32s forwards;
-    }
-
-    .hero__title em {
-      font-style: normal;
-      background: linear-gradient(105deg, var(--blue-cobalt) 5%, var(--blue-royal) 55%, var(--blue-cyan) 100%);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-    }
-
-    .hero__slogan {
-      font-family: var(--font-display);
-      font-size: clamp(1rem, 2vw, 1.15rem);
-      font-weight: 400;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--blue-royal);
-      margin-bottom: 1.35rem;
-      opacity: 0;
-      animation: rise 1s var(--ease) 0.42s forwards;
-    }
-
-    .hero__text {
-      font-size: clamp(0.975rem, 1.5vw, 1.1rem);
-      color: var(--muted);
-      line-height: 1.7;
-      max-width: 30rem;
-      margin-bottom: 1.75rem;
-      opacity: 0;
-      animation: rise 1s var(--ease) 0.52s forwards;
-    }
-
-    .progress {
-      width: min(220px, 55vw);
-      height: 2px;
-      border-radius: 2px;
-      background: rgba(15, 23, 42, 0.08);
-      overflow: hidden;
-      margin-bottom: 2rem;
-      opacity: 0;
-      animation: rise 1s var(--ease) 0.58s forwards;
-    }
-
-    .progress__bar {
-      height: 100%;
-      width: 38%;
-      border-radius: 2px;
-      background: linear-gradient(90deg, var(--blue-royal), var(--blue-cyan));
-      animation: progressSlide 2.8s var(--ease) infinite;
-    }
-
-    .actions {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 0.9rem 1.35rem;
-      opacity: 0;
-      animation: rise 1s var(--ease) 0.65s forwards;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 50px;
-      padding: 0 1.5rem;
-      border-radius: 999px;
-      font-size: 0.925rem;
-      font-weight: 500;
-      text-decoration: none;
-      color: #fff;
-      background: linear-gradient(135deg, var(--blue-cobalt), var(--blue-royal));
-      box-shadow: 0 0 0 1px rgba(0, 81, 186, 0.3), 0 14px 36px rgba(0, 81, 186, 0.2);
-      transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease);
-    }
-
-    .btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 0 0 1px rgba(0, 81, 186, 0.4), 0 18px 44px rgba(0, 81, 186, 0.28);
-    }
-
-    .mail {
-      color: #334155;
-      text-decoration: none;
-      font-size: 0.95rem;
-      border-bottom: 1px solid rgba(51, 65, 85, 0.22);
-      padding-bottom: 2px;
-      transition: color 0.2s ease, border-color 0.2s ease;
-    }
-
-    .mail:hover {
-      color: var(--blue-royal);
-      border-color: rgba(0, 81, 186, 0.45);
-    }
-
-    .bottom {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-between;
-      gap: 0.75rem 1.25rem;
-      padding-top: 1.25rem;
-      border-top: 1px solid var(--line);
-      font-size: 0.75rem;
-      color: #94A3B8;
-      opacity: 0;
-      animation: rise 0.9s var(--ease) 0.85s forwards;
-    }
-
-    .bottom strong {
-      font-weight: 500;
-      color: #64748B;
-    }
-
-    :focus-visible {
-      outline: 2px solid var(--blue-royal);
-      outline-offset: 3px;
-    }
-
-    @keyframes rise {
-      from { opacity: 0; transform: translateY(18px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes spin { to { transform: rotate(360deg); } }
-
-    @keyframes floatY {
-      from { transform: translateY(0); }
-      to { transform: translateY(-12px); }
-    }
-
-    @keyframes progressSlide {
-      0% { transform: translateX(-120%); }
-      100% { transform: translateX(320%); }
-    }
-
-    @media (min-width: 960px) {
-      .frame { width: min(100% - 5rem, 1120px); padding-block: 2.25rem; }
-      .hero { transform: translateY(-2vh); }
-      .stage__ring { right: 2%; opacity: 0.9; }
-      .stage__watermark { right: 1%; bottom: -4%; opacity: 0.9; }
-    }
-
-    @media (max-width: 768px) {
-      .stage__ring { opacity: 0.35; right: -40%; }
-      .stage__watermark { right: -18%; bottom: -2%; opacity: 0.5; font-size: clamp(8rem, 40vw, 12rem); }
-      .actions { flex-direction: column; align-items: flex-start; }
-      .btn { width: 100%; max-width: 280px; }
-      .bottom { flex-direction: column; align-items: flex-start; }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      .stage__ring::after,
-      .stage__watermark,
-      .progress__bar,
-      .top, .hero__eyebrow, .hero__title, .hero__slogan, .hero__text,
-      .progress, .actions, .bottom {
-        animation: none !important;
-        opacity: 1;
-        transform: none;
-      }
-      .progress__bar { width: 40%; }
-    }
-  </style>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/live.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/animations.css">
 </head>
-<body>
-  <div class="stage">
-    <div class="stage__grid" aria-hidden="true"></div>
-    <canvas class="stage__canvas" id="field" aria-hidden="true"></canvas>
-    <div class="stage__ring" aria-hidden="true"></div>
-    <div class="stage__watermark" aria-hidden="true">360</div>
+<body class="page-home">
+  <a class="sr-only" href="#main">Aller au contenu principal</a>
 
-    <div class="frame">
-      <header class="top">
-        <a class="brand" href="/" aria-label="Numerika360 SARL">
-          <img class="brand__img" src="assets/logo/logo.png" alt="Numerika360 SARL" width="180" height="40">
-        </a>
-        <p class="pill">Bientôt</p>
-      </header>
-
-      <main class="hero">
-        <p class="hero__eyebrow">Numerika360 SARL · République démocratique du Congo</p>
-        <h1 class="hero__title">Quelque chose<br><em>se prépare.</em></h1>
-        <p class="hero__slogan">Connecter. Innover. Transformer.</p>
-        <p class="hero__text">
-          Notre plateforme officielle arrive bientôt.
-          En attendant, échangeons dès maintenant.
-        </p>
-
-        <div class="progress" aria-hidden="true">
-          <div class="progress__bar"></div>
-        </div>
-
-        <div class="actions">
-          <a class="btn" href="mailto:contact@numerika360sarl.com">Nous écrire</a>
-          <a class="mail" href="mailto:contact@numerika360sarl.com">contact@numerika360sarl.com</a>
-        </div>
-      </main>
-
-      <footer class="bottom">
-        <p><strong>© 2026 Numerika360 SARL</strong></p>
-        <p>Tous droits réservés</p>
-      </footer>
+  <div class="topbar" aria-label="Coordonnées rapides">
+    <div class="container topbar__inner">
+      <div class="topbar__left">
+        <span>RDC · République démocratique du Congo</span>
+      </div>
+      <div class="topbar__right">
+        <a href="mailto:contact@numerika360sarl.com">contact@numerika360sarl.com</a>
+        <a href="tel:+243853670299">+243 853 670 299</a>
+      </div>
     </div>
   </div>
 
-  <script>
-    (function () {
-      var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-      var canvas = document.getElementById("field");
-      if (!canvas || reduce) return;
+  <header class="header">
+    <div class="container nav">
+      <a href="#top" class="logo" aria-label="Numerika360 — Accueil">
+        <img class="logo__img" src="assets/logo/logo.png" alt="Numerika360 SARL" width="180" height="40">
+      </a>
 
-      var ctx = canvas.getContext("2d");
-      if (!ctx) return;
+      <nav class="nav__links" aria-label="Navigation principale">
+        <a class="nav__link" href="#offre">Offre</a>
+        <a class="nav__link" href="#formation">Formation</a>
+        <a class="nav__link" href="#network">Network</a>
+        <a class="nav__link" href="contact.html">Contact</a>
+      </nav>
 
-      var nodes = [];
-      var dpr = Math.min(window.devicePixelRatio || 1, 2);
-      var raf;
+      <a class="nav__phone" href="tel:+243853670299">+243 853 670 299</a>
+      <a class="btn btn--primary nav__cta" href="contact.html">Nous contacter</a>
 
-      function resize() {
-        var w = window.innerWidth;
-        var h = window.innerHeight;
-        canvas.width = w * dpr;
-        canvas.height = h * dpr;
-        canvas.style.width = w + "px";
-        canvas.style.height = h + "px";
-        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-        var count = Math.min(36, Math.floor((w * h) / 32000));
-        nodes = [];
-        for (var i = 0; i < count; i++) {
-          nodes.push({
-            x: Math.random() * w,
-            y: Math.random() * h,
-            vx: (Math.random() - 0.5) * 0.2,
-            vy: (Math.random() - 0.5) * 0.2,
-            r: Math.random() * 1.4 + 0.4
-          });
-        }
-      }
+      <button class="nav__toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobile-menu">
+        <span class="nav__toggle-bar"></span>
+      </button>
+    </div>
+  </header>
 
-      function draw() {
-        var w = canvas.clientWidth;
-        var h = canvas.clientHeight;
-        ctx.clearRect(0, 0, w, h);
+  <div class="nav__mobile" id="mobile-menu" role="dialog" aria-modal="true" aria-label="Menu de navigation">
+    <nav class="nav__mobile-links" aria-label="Navigation mobile">
+      <a class="nav__mobile-link" href="#offre">Offre</a>
+      <a class="nav__mobile-link" href="#formation">Formation</a>
+      <a class="nav__mobile-link" href="#network">Network</a>
+      <a class="nav__mobile-link" href="contact.html">Contact</a>
+    </nav>
+    <a class="btn btn--primary nav__mobile-cta" href="contact.html">Nous contacter</a>
+  </div>
 
-        for (var i = 0; i < nodes.length; i++) {
-          var p = nodes[i];
-          p.x += p.vx;
-          p.y += p.vy;
-          if (p.x < 0 || p.x > w) p.vx *= -1;
-          if (p.y < 0 || p.y > h) p.vy *= -1;
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero hero--brand hero-animate" id="top" aria-labelledby="hero-title">
+      <div class="hero__bg" aria-hidden="true">
+        <div class="hero__glow"></div>
+        <div class="hero__grid"></div>
+        <div class="hero__orb hero__orb--1"></div>
+        <div class="hero__orb hero__orb--2"></div>
+        <canvas id="hero-canvas" class="hero__canvas"></canvas>
+      </div>
+      <div class="container hero__layout">
+        <div class="hero__content">
+          <p class="hero__label">Solutions technologiques · RDC</p>
+          <h1 id="hero-title" class="hero__title">Connecter. Innover.<br><em>Transformer.</em></h1>
+          <p class="hero__subtitle">Des solutions IT intelligentes, scalables et adaptées aux entreprises, institutions et organisations en transformation numérique.</p>
+          <div class="btn-group">
+            <a class="btn btn--primary btn--lg btn--arrow" href="#offre">Découvrir notre offre <span aria-hidden="true">→</span></a>
+            <a class="btn btn--outline-light btn--lg" href="contact.html">Nous contacter</a>
+          </div>
+        </div>
+        <div class="hero__visual reveal-scale" aria-hidden="true">
+          <div class="hero__visual-ring"></div>
+          <div class="hero__visual-frame">
+            <img src="assets/images/expertise/transformation.jpg" alt="" width="800" height="600" loading="eager">
+            <div class="hero__visual-glow"></div>
+          </div>
+        </div>
+      </div>
+      <div class="hero__slash" aria-hidden="true"></div>
+    </section>
 
-          ctx.beginPath();
-          ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-          ctx.fillStyle = "rgba(100, 116, 139, 0.32)";
-          ctx.fill();
+    <section class="pillars" aria-label="Points clés Numerika360">
+      <div class="container pillars__grid">
+        <article class="pillars__item reveal">
+          <p class="pillars__num">04</p>
+          <p class="pillars__title">Pôles d'expertise</p>
+          <p class="pillars__text">Data, digital, infrastructure et formation.</p>
+        </article>
+        <article class="pillars__item reveal reveal-delay-1">
+          <p class="pillars__num">360°</p>
+          <p class="pillars__title">Vision globale</p>
+          <p class="pillars__text">De la stratégie au déploiement opérationnel.</p>
+        </article>
+        <article class="pillars__item reveal reveal-delay-2">
+          <p class="pillars__num">RDC</p>
+          <p class="pillars__title">Ancrage local</p>
+          <p class="pillars__text">Entreprise congolaise, solutions adaptées au terrain.</p>
+        </article>
+        <article class="pillars__item reveal reveal-delay-3">
+          <p class="pillars__num">+</p>
+          <p class="pillars__title">Sur mesure</p>
+          <p class="pillars__text">Chaque projet part de vos besoins réels.</p>
+        </article>
+      </div>
+    </section>
 
-          for (var j = i + 1; j < nodes.length; j++) {
-            var q = nodes[j];
-            var dx = p.x - q.x;
-            var dy = p.y - q.y;
-            var dist = Math.sqrt(dx * dx + dy * dy);
-            if (dist < 120) {
-              ctx.beginPath();
-              ctx.moveTo(p.x, p.y);
-              ctx.lineTo(q.x, q.y);
-              ctx.strokeStyle = "rgba(0, 81, 186, " + (0.11 * (1 - dist / 120)) + ")";
-              ctx.lineWidth = 0.65;
-              ctx.stroke();
-            }
-          }
-        }
-        raf = requestAnimationFrame(draw);
-      }
+    <div class="ticker" aria-hidden="true">
+      <div class="ticker__track">
+        <div class="ticker__group">
+          <span class="ticker__item">Intelligence Artificielle</span>
+          <span class="ticker__item">Data Science</span>
+          <span class="ticker__item">Cloud &amp; Infrastructure</span>
+          <span class="ticker__item">Cybersécurité</span>
+          <span class="ticker__item">Développement Web</span>
+          <span class="ticker__item">Formation professionnelle</span>
+          <span class="ticker__item">Transformation numérique</span>
+          <span class="ticker__item">Numerika360 Network</span>
+        </div>
+        <div class="ticker__group" aria-hidden="true">
+          <span class="ticker__item">Intelligence Artificielle</span>
+          <span class="ticker__item">Data Science</span>
+          <span class="ticker__item">Cloud &amp; Infrastructure</span>
+          <span class="ticker__item">Cybersécurité</span>
+          <span class="ticker__item">Développement Web</span>
+          <span class="ticker__item">Formation professionnelle</span>
+          <span class="ticker__item">Transformation numérique</span>
+          <span class="ticker__item">Numerika360 Network</span>
+        </div>
+      </div>
+    </div>
 
-      resize();
-      draw();
-      var t;
-      window.addEventListener("resize", function () {
-        clearTimeout(t);
-        t = setTimeout(function () {
-          cancelAnimationFrame(raf);
-          resize();
-          draw();
-        }, 120);
-      });
-    })();
-  </script>
+    <!-- A PROPOS -->
+    <section class="section section--circuit" id="a-propos" aria-labelledby="about-title">
+      <div class="container">
+        <div class="about-showcase">
+          <div class="about-showcase__media reveal">
+            <div class="about-showcase__frame">
+              <img src="assets/images/expertise/intelligence-data.jpg" alt="Expertise technologique Numerika360" loading="lazy" width="900" height="720">
+            </div>
+            <div class="about-showcase__badge">
+              <p class="about-showcase__badge-num">4</p>
+              <p class="about-showcase__badge-text">Pôles d'expertise pour couvrir tout votre parcours digital</p>
+            </div>
+          </div>
+          <div class="about-showcase__content reveal reveal-delay-2">
+            <p class="section__label">À propos</p>
+            <h2 id="about-title" class="section__title">Une entreprise technologique au service de la transformation.</h2>
+            <p class="lead mt-2">Numerika360 SARL est une entreprise technologique congolaise. Nous accompagnons organisations privées et publiques avec des solutions adaptées à leurs enjeux réels.</p>
+            <ul class="about-features">
+              <li class="about-features__item"><span class="about-features__check" aria-hidden="true">✓</span> Solutions sur mesure, pensées pour le terrain congolais</li>
+              <li class="about-features__item"><span class="about-features__check" aria-hidden="true">✓</span> Expertise IA, data, digital, cloud et cybersécurité</li>
+              <li class="about-features__item"><span class="about-features__check" aria-hidden="true">✓</span> Accompagnement de bout en bout, avec vos équipes</li>
+              <li class="about-features__item"><span class="about-features__check" aria-hidden="true">✓</span> Formation et montée en compétences incluses</li>
+            </ul>
+            <div class="btn-group mt-4">
+              <a class="btn btn--primary btn--arrow" href="contact.html">Parler à Numerika360 <span aria-hidden="true">→</span></a>
+            </div>
+          </div>
+        </div>
+        <div class="why-grid mt-4">
+          <div class="why-item reveal">
+            <h3 class="why-item__title">Expertise</h3>
+            <p class="why-item__text">Des technologies modernes, adaptées aux enjeux métier.</p>
+          </div>
+          <div class="why-item reveal reveal-delay-1">
+            <h3 class="why-item__title">Sur mesure</h3>
+            <p class="why-item__text">Chaque solution part des besoins réels du client.</p>
+          </div>
+          <div class="why-item reveal reveal-delay-2">
+            <h3 class="why-item__title">Accompagnement</h3>
+            <p class="why-item__text">De la conception au déploiement, avec les équipes.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- OFFRE -->
+    <section class="section section--dark" id="offre" aria-labelledby="offre-title">
+      <div class="container">
+        <div class="section__header reveal">
+          <p class="section__label">Notre offre</p>
+          <h2 id="offre-title" class="section__title">Quatre pôles. Une offre claire.</h2>
+          <p class="section__subtitle">De la donnée à l’infrastructure, nos expertises sont regroupées pour répondre aux besoins réels des organisations.</p>
+        </div>
+
+        <div class="expertise-panels" style="margin-bottom: 2rem;">
+          <article class="expertise-panel reveal">
+            <img class="expertise-panel__img" src="assets/images/expertise/intelligence-data.jpg" alt="" loading="lazy" width="1400" height="788">
+            <div class="expertise-panel__overlay" aria-hidden="true"></div>
+            <div class="expertise-panel__content">
+              <h3 class="expertise-panel__title">Intelligence &amp; Data</h3>
+              <p class="expertise-panel__tags">IA · Data Science · BI</p>
+            </div>
+          </article>
+          <article class="expertise-panel reveal reveal-delay-1">
+            <img class="expertise-panel__img" src="assets/images/expertise/transformation.jpg" alt="" loading="lazy" width="1400" height="788">
+            <div class="expertise-panel__overlay" aria-hidden="true"></div>
+            <div class="expertise-panel__content">
+              <h3 class="expertise-panel__title">Digital &amp; Software</h3>
+              <p class="expertise-panel__tags">Digitalisation · Développement · Sur mesure</p>
+            </div>
+          </article>
+          <article class="expertise-panel reveal reveal-delay-2">
+            <img class="expertise-panel__img" src="assets/images/expertise/infrastructure.jpg" alt="" loading="lazy" width="1400" height="788">
+            <div class="expertise-panel__overlay" aria-hidden="true"></div>
+            <div class="expertise-panel__content">
+              <h3 class="expertise-panel__title">Infrastructure &amp; Sécurité</h3>
+              <p class="expertise-panel__tags">Réseaux · Cloud · Cybersécurité</p>
+            </div>
+          </article>
+          <article class="expertise-panel reveal reveal-delay-3">
+            <img class="expertise-panel__img" src="assets/images/expertise/formation-network.jpg" alt="" loading="lazy" width="1400" height="788">
+            <div class="expertise-panel__overlay" aria-hidden="true"></div>
+            <div class="expertise-panel__content">
+              <h3 class="expertise-panel__title">Formation &amp; Accompagnement</h3>
+              <p class="expertise-panel__tags">Formation · Conseil</p>
+            </div>
+          </article>
+        </div>
+
+        <div class="poles-grid">
+          <article class="pole-card reveal" id="offre-intelligence">
+            <span class="pole-card__num">01</span>
+            <h3 class="pole-card__title">Intelligence &amp; Data</h3>
+            <p class="pole-card__text">Transformer les données en intelligence et en décisions.</p>
+            <ul class="pole-card__list">
+              <li>Intelligence Artificielle &amp; Machine Learning</li>
+              <li>Data Science &amp; Analyse de données</li>
+              <li>Business Intelligence</li>
+            </ul>
+          </article>
+          <article class="pole-card reveal reveal-delay-1" id="offre-digital">
+            <span class="pole-card__num">02</span>
+            <h3 class="pole-card__title">Digital &amp; Software</h3>
+            <p class="pole-card__text">Concevoir des solutions digitales adaptées aux besoins réels.</p>
+            <ul class="pole-card__list">
+              <li>Digitalisation &amp; Automatisation</li>
+              <li>Développement Web &amp; Applications</li>
+              <li>Solutions technologiques sur mesure</li>
+            </ul>
+          </article>
+          <article class="pole-card reveal reveal-delay-2" id="offre-infra">
+            <span class="pole-card__num">03</span>
+            <h3 class="pole-card__title">Infrastructure, Cloud &amp; Cybersécurité</h3>
+            <p class="pole-card__text">Construire et sécuriser des infrastructures fiables.</p>
+            <ul class="pole-card__list">
+              <li>Réseaux &amp; Infrastructures</li>
+              <li>Cloud &amp; Serveurs</li>
+              <li>Cybersécurité</li>
+            </ul>
+          </article>
+          <article class="pole-card reveal reveal-delay-3" id="offre-formation">
+            <span class="pole-card__num">04</span>
+            <h3 class="pole-card__title">Formation &amp; Accompagnement</h3>
+            <p class="pole-card__text">Développer les compétences et accompagner la transformation.</p>
+            <ul class="pole-card__list">
+              <li>Formation professionnelle</li>
+              <li>Accompagnement &amp; Conseil technologique</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- FORMATION -->
+    <section class="section" id="formation" aria-labelledby="formation-title">
+      <div class="container">
+        <div class="formation-panel">
+          <div class="split">
+            <div class="reveal">
+              <p class="section__label">Formation</p>
+              <h2 id="formation-title" class="section__title">Développez les compétences de demain.</h2>
+              <p class="lead mt-2">Formations pratiques pour particuliers et entreprises : formats individuels, sessions entreprises et ateliers ciblés.</p>
+              <div class="btn-group mt-4">
+                <a class="btn btn--primary btn--arrow" href="contact.html?sujet=formation">Demander une formation <span aria-hidden="true">→</span></a>
+              </div>
+            </div>
+            <div class="reveal reveal-delay-2">
+              <div class="tags" role="list" aria-label="Domaines de formation">
+                <span class="tag" role="listitem">Python</span>
+                <span class="tag" role="listitem">Data Science</span>
+                <span class="tag" role="listitem">Intelligence Artificielle</span>
+                <span class="tag" role="listitem">Machine Learning</span>
+                <span class="tag" role="listitem">Power BI</span>
+                <span class="tag" role="listitem">Développement Web</span>
+                <span class="tag" role="listitem">Bases de données</span>
+                <span class="tag" role="listitem">Réseaux</span>
+                <span class="tag" role="listitem">Cybersécurité</span>
+                <span class="tag" role="listitem">Cloud</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- NETWORK -->
+    <section class="section section--pattern" id="network" aria-labelledby="network-title">
+      <div class="container">
+        <div class="section__header section__header--center reveal">
+          <p class="section__label">Écosystème</p>
+          <h2 id="network-title" class="section__title">Numerika360 Network</h2>
+          <p class="section__subtitle">L’écosystème qui connecte les talents, les entreprises et les acteurs de l’innovation.</p>
+        </div>
+        <div class="network-visual reveal-scale" aria-hidden="true">
+          <canvas id="network-canvas"></canvas>
+        </div>
+        <div class="network-grid">
+          <article class="card card--live reveal">
+            <div class="card__icon-wrap" aria-hidden="true">01</div>
+            <h3 class="card__title">Communauté</h3>
+            <p class="card__text">Étudiants, développeurs, ingénieurs, data scientists, entrepreneurs et passionnés de technologie.</p>
+          </article>
+          <article class="card card--live reveal reveal-delay-1">
+            <div class="card__icon-wrap" aria-hidden="true">02</div>
+            <h3 class="card__title">Réseau professionnel</h3>
+            <p class="card__text">Mise en relation des talents et des entreprises pour accélérer les collaborations.</p>
+          </article>
+          <article class="card card--live reveal reveal-delay-2">
+            <div class="card__icon-wrap" aria-hidden="true">03</div>
+            <h3 class="card__title">Événements</h3>
+            <p class="card__text">Conférences, ateliers, hackathons et rencontres technologiques.</p>
+          </article>
+        </div>
+        <div class="mt-4" style="text-align:center">
+          <a class="btn btn--primary reveal" href="contact.html?sujet=network">Rejoindre le Network</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTEURS -->
+    <section class="section section--alt" id="secteurs" aria-labelledby="sectors-title">
+      <div class="container">
+        <div class="section__header reveal">
+          <p class="section__label">Secteurs que nous accompagnons</p>
+          <h2 id="sectors-title" class="section__title">Des solutions pour chaque secteur.</h2>
+        </div>
+        <div class="sectors reveal" role="list">
+          <span class="sector" role="listitem">Entreprise</span>
+          <span class="sector" role="listitem">Finance</span>
+          <span class="sector" role="listitem">Télécommunications</span>
+          <span class="sector" role="listitem">Éducation</span>
+          <span class="sector" role="listitem">ONG</span>
+          <span class="sector" role="listitem">Institutions publiques</span>
+          <span class="sector" role="listitem">Startups</span>
+          <span class="sector" role="listitem">PME</span>
+          <span class="sector" role="listitem">Particuliers</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section class="cta-final" aria-labelledby="cta-title">
+      <div class="cta-final__glow" aria-hidden="true"></div>
+      <div class="container">
+        <div class="cta-final__content reveal">
+          <h2 id="cta-title" class="cta-final__title">Construisons votre prochaine solution technologique.</h2>
+          <p class="cta-final__text">Un projet, un besoin de digitalisation ou une idée ? Échangeons.</p>
+          <div class="btn-group" style="justify-content:center">
+            <a class="btn btn--primary btn--lg" href="contact.html">Nous contacter</a>
+            <a class="btn btn--outline-light btn--lg" href="tel:+243853670299">+243 853 670 299</a>
+          </div>
+          <p class="cta-final__phone">
+            <a href="mailto:contact@numerika360sarl.com">contact@numerika360sarl.com</a>
+            ·
+            <a href="tel:+243853670299">+243 853 670 299</a>
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <a href="#top" class="logo" aria-label="Numerika360">
+            <img class="logo__img logo__img--footer" src="assets/logo/logo_blanc.png" alt="Numerika360 SARL" width="180" height="40">
+          </a>
+          <p class="footer__slogan">Connecter. Innover. Transformer.</p>
+          <p class="footer__brand-text">Entreprise technologique basée en République démocratique du Congo.</p>
+        </div>
+        <div>
+          <h3 class="footer__col-title">Navigation</h3>
+          <ul class="footer__links">
+            <li><a href="#offre">Offre</a></li>
+            <li><a href="#formation">Formation</a></li>
+            <li><a href="#network">Network</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="footer__col-title">Contact</h3>
+          <ul class="footer__links">
+            <li><a href="mailto:contact@numerika360sarl.com">contact@numerika360sarl.com</a></li>
+            <li><a href="tel:+243853670299">+243 853 670 299</a></li>
+            <li><a href="contact.html">Formulaire</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="footer__col-title">Légal</h3>
+          <ul class="footer__links">
+            <li><a href="mentions.html">Mentions légales</a></li>
+            <li><a href="mentions.html#confidentialite">Confidentialité</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>© <span data-year>2026</span> Numerika360 SARL. Tous droits réservés.</p>
+        <div class="footer__legal">
+          <a href="mentions.html">Mentions légales</a>
+          <a href="mentions.html#confidentialite">Politique de confidentialité</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/navigation.js" defer></script>
+  <script src="js/animations.js" defer></script>
+  <script src="js/main.js" defer></script>
 </body>
 </html>
