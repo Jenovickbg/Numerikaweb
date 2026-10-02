@@ -22,7 +22,10 @@ h1, h2,
 }
 
 .page-home .hero {
-  padding-block: clamp(3rem, 5vw, 4rem);
+  min-height: auto;
+  overflow: visible;
+  align-items: flex-start;
+  padding-block: clamp(3rem, 5vw, 4rem) clamp(3.25rem, 6vw, 5rem);
 }
 
 .hero__title {
@@ -36,6 +39,7 @@ h1, h2,
 
 .hero__visual {
   max-width: 560px;
+  display: block;
 }
 
 .section__title {
