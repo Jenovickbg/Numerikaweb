@@ -1,0 +1,282 @@
+/* Présentation des cinq métiers : titres lisibles et contenu sans doublons. */
+h1, h2,
+.hero__title,
+.section__title,
+.page-hero__title,
+.cta-final__title {
+  font-family: var(--font);
+  font-weight: 700;
+  letter-spacing: -0.035em;
+  text-transform: none;
+  text-wrap: balance;
+}
+
+.header {
+  background: var(--white);
+  border-bottom-color: var(--border);
+}
+
+.page-home {
+  --topbar-h: 0px;
+  --header-total: var(--nav-h);
+}
+
+.page-home .hero {
+  padding-block: clamp(3rem, 5vw, 4rem);
+}
+
+.hero__title {
+  font-size: clamp(2.5rem, 4.5vw, 4.25rem);
+  line-height: 1.08;
+}
+
+.hero__subtitle {
+  max-width: 510px;
+}
+
+.hero__visual {
+  max-width: 560px;
+}
+
+.section__title {
+  font-size: clamp(1.9rem, 3.2vw, 2.8rem);
+  line-height: 1.15;
+}
+
+.expertise-list {
+  border-top: 1px solid var(--border-strong);
+}
+
+.expertise-row {
+  display: grid;
+  grid-template-columns: 48px minmax(220px, 0.9fr) minmax(0, 1.4fr);
+  gap: 1.5rem;
+  align-items: baseline;
+  padding-block: 1.9rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.expertise-row__number,
+.approach-step__number {
+  font-size: var(--fs-sm);
+  font-weight: 700;
+  color: var(--accent);
+  font-variant-numeric: tabular-nums;
+}
+
+.expertise-row h3 {
+  font-size: clamp(1.15rem, 2vw, 1.4rem);
+  line-height: 1.3;
+}
+
+.expertise-row p,
+.approach-step p {
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+.approach-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 3rem;
+}
+
+.approach-step h3 {
+  margin-block: 1rem 0.75rem;
+  font-size: var(--fs-xl);
+}
+
+.company-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(2rem, 6vw, 5rem);
+  align-items: start;
+}
+
+.company-copy p + p {
+  margin-top: 1.2rem;
+}
+
+.company-registration {
+  margin-top: 1.75rem;
+  padding: 1.25rem 1.5rem;
+  border-left: 3px solid var(--accent);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  background: var(--bg-secondary);
+}
+
+.company-registration h3 {
+  margin-bottom: 1rem;
+  font-size: var(--fs-base);
+}
+
+.company-registration dl {
+  display: grid;
+  gap: 0.85rem;
+  margin: 0;
+}
+
+.company-registration dt {
+  color: var(--text-secondary);
+  font-size: var(--fs-sm);
+}
+
+.company-registration dd {
+  margin: 0.2rem 0 0;
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+.network-note {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border-strong);
+}
+
+.network-note h3 {
+  font-size: var(--fs-lg);
+  margin-bottom: 0.7rem;
+}
+
+.network-note p {
+  margin-bottom: 1rem;
+  color: var(--text-secondary);
+}
+
+.text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  color: var(--accent);
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 0.25em;
+}
+
+.cta-final {
+  padding-block: clamp(3.5rem, 7vw, 5rem);
+}
+
+.cta-final .btn-group {
+  justify-content: center;
+}
+
+.contact-layout--direct {
+  grid-template-columns: 0.8fr 1.2fr;
+  align-items: start;
+}
+
+.contact-intro h2 {
+  margin-bottom: 1.25rem;
+}
+
+.contact-intro p + p {
+  margin-top: 1rem;
+}
+
+.contact-channels {
+  display: grid;
+  gap: 1rem;
+}
+
+.contact-channel {
+  display: block;
+  padding: clamp(1.25rem, 3vw, 2rem);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius);
+  background: var(--bg-secondary);
+  transition: border-color var(--duration-fast) var(--ease);
+}
+
+.contact-channel:hover {
+  border-color: var(--accent);
+}
+
+.contact-channel__label,
+.contact-channel__value,
+.contact-channel__action {
+  display: block;
+}
+
+.contact-channel__label {
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+  font-size: var(--fs-sm);
+}
+
+.contact-channel__value {
+  font-size: clamp(1rem, 2vw, 1.4rem);
+  font-weight: 700;
+  color: var(--text-primary);
+  overflow-wrap: anywhere;
+}
+
+.contact-channel__action {
+  margin-top: 1rem;
+  color: var(--accent);
+  font-size: var(--fs-sm);
+}
+
+.contact-details {
+  padding-top: 2rem;
+  font-size: var(--fs-sm);
+  color: var(--text-secondary);
+}
+
+.contact-details p + p {
+  margin-top: 0.35rem;
+}
+
+@media (max-width: 1024px) {
+  .hero__visual {
+    max-width: 380px;
+  }
+
+  .expertise-row {
+    grid-template-columns: 36px minmax(180px, 0.9fr) minmax(0, 1.2fr);
+    gap: 1rem;
+  }
+
+  .approach-grid {
+    gap: 1.5rem;
+  }
+
+  .company-layout,
+  .contact-layout--direct {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero__visual {
+    max-width: 300px;
+  }
+
+  .hero__title {
+    font-size: clamp(2.15rem, 8vw, 3rem);
+  }
+
+  .expertise-row {
+    grid-template-columns: 28px minmax(0, 1fr);
+    row-gap: 0.75rem;
+    padding-block: 1.5rem;
+  }
+
+  .expertise-row p {
+    grid-column: 2;
+  }
+
+  .approach-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .approach-step + .approach-step {
+    border-top: 1px solid var(--border);
+    padding-top: 1.5rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}

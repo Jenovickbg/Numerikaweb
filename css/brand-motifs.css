@@ -1,0 +1,139 @@
+/* Numerika360 — exports web des motifs, cadrés comme les anciens fonds CSS.
+   Les fichiers originaux sont conservés dans assets/icons. */
+:root {
+  --motif-outline: url("../assets/icons/motif-outline.webp");
+  --motif-white: url("../assets/icons/motif-white.webp");
+}
+
+.brand-motif,
+.footer::before {
+  position: absolute;
+  width: 260px;
+  aspect-ratio: 3 / 5;
+  background-image: var(--motif-outline);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* Une signature ample dans le bleu du premier écran. */
+.brand-motif--hero {
+  width: clamp(260px, 31vw, 470px);
+  right: -3%;
+  top: 50%;
+  transform: translateY(-50%);
+  background-image: var(--motif-white);
+  opacity: 0.13;
+}
+
+/* Les motifs prennent la place de la grille derrière la présentation. */
+.section--circuit::before {
+  content: none;
+}
+
+.brand-motif--about {
+  width: clamp(240px, 29vw, 430px);
+  right: -7%;
+  top: 12%;
+  opacity: 0.13;
+}
+
+.section--circuit > .container,
+.formation-panel > .split,
+.page-hero > .container,
+.footer > .container {
+  position: relative;
+  z-index: 1;
+}
+
+.brand-motif--formation {
+  width: 240px;
+  right: -54px;
+  bottom: -115px;
+  background-image: var(--motif-white);
+  opacity: 0.07;
+}
+
+.brand-motif--cta {
+  width: clamp(260px, 28vw, 400px);
+  left: -5%;
+  top: 50%;
+  transform: translateY(-50%) rotate(180deg);
+  background-image: var(--motif-white);
+  opacity: 0.1;
+}
+
+.brand-motif--page {
+  width: clamp(180px, 24vw, 320px);
+  right: 4%;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0.16;
+}
+
+/* Rappel commun aux trois pages, sous les liens et les coordonnées. */
+.footer {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.footer::before {
+  content: "";
+  width: 220px;
+  right: -55px;
+  bottom: -100px;
+  filter: brightness(0) invert(1);
+  opacity: 0.14;
+}
+
+@media (max-width: 1024px) {
+  .brand-motif--hero {
+    right: -70px;
+    opacity: 0.09;
+  }
+
+  .brand-motif--about {
+    right: -110px;
+    top: auto;
+    bottom: 20px;
+    opacity: 0.09;
+  }
+}
+
+@media (max-width: 600px) {
+  .brand-motif--hero {
+    width: 230px;
+    right: -100px;
+    top: 42%;
+    opacity: 0.07;
+  }
+
+  .brand-motif--formation {
+    width: 190px;
+    right: -75px;
+    bottom: -60px;
+    opacity: 0.05;
+  }
+
+  .brand-motif--cta {
+    width: 240px;
+    left: -135px;
+    opacity: 0.07;
+  }
+
+  .brand-motif--page {
+    width: 190px;
+    right: -85px;
+    opacity: 0.09;
+  }
+
+  .footer::before {
+    width: 180px;
+    right: -70px;
+    bottom: -60px;
+    opacity: 0.1;
+  }
+}
